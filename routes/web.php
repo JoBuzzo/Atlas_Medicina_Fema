@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\Categories;
 use App\Http\Livewire\Group\Store;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 });
 Route::get('group-image', Store::class);
-
+route::get('categories', Categories::class);
 
 
 require __DIR__.'/auth.php';
