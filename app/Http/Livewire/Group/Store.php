@@ -14,6 +14,8 @@ class Store extends Component
 
     public $categories, $search_category, $selected_categories = [];
 
+    protected $listeners = ['AddedCategory' => '$refresh'];
+    
     public function mount()
     {
         $this->categories = Category::orderBy('name', 'asc')->get();

@@ -2,32 +2,8 @@
     <div class="bg-white shadow dark:bg-gray-800">
         <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="sm:flex sm:flex-row sm:items-center sm:gap-6">
-                <button wire:click="show"
-                    class="flex items-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-                    Adicionar categoria
-                </button>
-                {{-- @if ($show)
-                    <div class="relative flex flex-col">
-                        <form wire:submit.prevent="saveCategory" class="items-center mt-4 sm:flex sm:mt-0">
-                            <div class="mb-3 sm:mb-0">
-                                <input type="text" wire:model="category" placeholder="Digite aqui..."
-                                    class="w-56 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-
-                            </div>
-                            <button type="submit"
-                                class="sm:ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Confirmar</button>
-                        </form>
-                        @error('category')
-                            <span
-                                class="sm:absolute sm:bottom-[-18px] mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
-                        @enderror
-                    </div>
-                @endif
-                @if (session()->has('msg'))
-                    <livewire:components.toast />
-                @endif --}}
+                <livewire:components.create-category />
             </div>
-
         </div>
     </div>
     <div class="py-12">
@@ -36,8 +12,8 @@
                 <div class="">
                     <div class="flex flex-col gap-10">
                         <form wire:submit.prevent="saveGroup">
-                            <h2 class="text-3xl font-bold mb-4">Grupo</h2>
-                            <div class="flex flex-col md:flex-row md:items-end justify-between w-full gap-6">
+                            <h2 class="mb-4 text-3xl font-bold">Grupo</h2>
+                            <div class="flex flex-col justify-between w-full gap-6 md:flex-row md:items-end">
                                 <div class="w-full md:w-1/2">
                                     <label for="titleGroup" class="text-sm font-semibold dark:text-white">Titulo</label>
                                     <input type="text" wire:model='titleGroup' id="titleGroup"
@@ -48,7 +24,7 @@
                                             class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="flex items-end w-full md:gap-8 md:w-1/2 justify-between">
+                                <div class="flex items-end justify-between w-full md:gap-8 md:w-1/2">
                                     <div x-data="{ open: false }" class="relative">
                                         <p class="text-sm font-semibold dark:text-white">Categorias</p>
                                         <button x-on:click="open = ! open"
@@ -124,6 +100,7 @@
                                                 {{ $message }}</p>
                                         @enderror
                                     </div>
+                                    @if (!$group)
                                     <div class="text-center">
                                         <button
                                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -131,6 +108,7 @@
                                             Confirmar
                                         </button>
                                     </div>
+                                    @endif
                                 </div>
 
                             </div>
@@ -139,27 +117,27 @@
                         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
                         <form wire:submit.prevent='saveImage'>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-3xl font-bold mb-4">Imagens</h2>
+                            <div class="flex items-center justify-between">
+                                <h2 class="mb-4 text-3xl font-bold">Imagens</h2>
                                 <button wire:click="resetImages"
                                     class="flex items-center gap-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                                     type="submit">
                                     Nova imagem
                                 </button>
                             </div>
-                            <div class="w-ful flex flex-col items-end">
+                            <div class="flex flex-col items-end w-ful">
 
                                 <div
-                                    class="flex flex-col md:flex-row gap-8 w-full items-center md:items-start md:justify-between">
-                                    <div class="flex w-full md:w-1/2 flex-col gap-5 justify-between">
+                                    class="flex flex-col items-center w-full gap-8 md:flex-row md:items-start md:justify-between">
+                                    <div class="flex flex-col justify-between w-full gap-5 md:w-1/2">
 
                                         <div>
                                             <p class="text-sm font-semibold dark:text-white">Imagem</p>
-                                            <div class="flex items-center  w-full h-96 mt-3 relative">
+                                            <div class="relative flex items-center w-full mt-3 h-96">
                                                 <label for="image"
                                                     class="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                                     <div
-                                                        class="flex flex-col items-center justify-center pt-5 pb-6 z-10">
+                                                        class="z-10 flex flex-col items-center justify-center pt-5 pb-6">
                                                         @if (isset($image))
                                                             <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400"
                                                                 fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -205,7 +183,7 @@
                                                     <input wire:model="image" id="image" type="file"
                                                         class="hidden" />
                                                     @isset($image)
-                                                        <img class="h-full w-full absolute object-scale-down brightness-50"
+                                                        <img class="absolute object-scale-down w-full h-full brightness-50"
                                                             src="{{ $image->temporaryUrl() }}" alt="">
                                                     @endisset
                                                 </label>

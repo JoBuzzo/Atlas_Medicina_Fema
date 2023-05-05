@@ -16,6 +16,12 @@ class Image extends Model
         'image', 'title', 'description'
     ];
 
+    public function getImageAttribute($image)
+    {
+        if($image) return asset("storage/images/$image");
+        else return null;
+    }
+
 
     public function group() : BelongsTo
     {

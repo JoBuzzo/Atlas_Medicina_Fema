@@ -3,7 +3,11 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Categories;
-use App\Http\Livewire\Group\Store;
+use App\Http\Livewire\Group\{
+    Show,
+    Store, 
+    Update
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
-Route::get('group-image', Store::class)->name('images.store');
+Route::get('group-image/edit/{id}', Update::class)->name('images.update');
+Route::get('group-image/create', Store::class)->name('images.store');
+Route::get('group-image/{id}', Show::class)->name('images.show');
 route::get('categories', Categories::class)->name('categories');
 
 
