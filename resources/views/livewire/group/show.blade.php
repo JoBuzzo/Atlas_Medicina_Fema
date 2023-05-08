@@ -30,7 +30,7 @@
                             </a>
                         </div>
                         <div class="">
-                            <div class="flex justify-end w-full gap-6">
+                            <div class="flex justify-end w-full gap-6 mb-3">
                                 <livewire:components.update-image :id='$image->id' />
                                 <livewire:components.delete-image :id='$image->id' />
                             </div>
