@@ -30,6 +30,7 @@
                             <div class="flex items-center justify-between mb-3">
                                 <h2 class="text-2xl font-medium dark:text-white">{{ $image->title }}</h2>
                                 <livewire:components.update-image :id='$image->id' />
+                                <livewire:components.delete-image :id='$image->id' />
                             </div>
                             <p class="">{{ $image->description }}</p>
 
