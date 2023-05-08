@@ -55,7 +55,7 @@ class Update extends Component
         }
 
         $this->reset('show');
-        $this->emit('ImageUpdated', $this->group->id);
+        $this->emit('GroupUpdated', $this->group->id);
     }
 
 
