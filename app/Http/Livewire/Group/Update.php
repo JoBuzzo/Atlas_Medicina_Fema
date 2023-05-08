@@ -53,7 +53,9 @@ class Update extends Component
         foreach ($this->selected_categories as $id) {
             $this->group->categories()->attach($id);
         }
-        
+
+        $this->reset('show');
+        $this->emit('ImageUpdated', $this->group->id);
     }
 
 
@@ -62,10 +64,13 @@ class Update extends Component
     {   
         $this->validateOnly($propertyName, [
             'titleGroup' => 'required|string|max:60',
-            // 'titleImage' => 'required|string|max:60',
-            // 'image' => 'image',
-            // 'description' => 'required|string',
         ]);
+    }
+
+    public $show;
+    public function show()
+    {
+        $this->show = !$this->show;
     }
 
 }
