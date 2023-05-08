@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Categories;
+use App\Http\Livewire\Components\UpdateImage;
 use App\Http\Livewire\Group\{
     Show,
     Store, 

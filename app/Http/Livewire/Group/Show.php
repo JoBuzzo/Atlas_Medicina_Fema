@@ -14,6 +14,9 @@ class Show extends Component
 
     public $group;
     public $images;
+
+    protected $listeners = ['ImageUpdated' => 'mount'];
+    
     public function mount($id)
     {
         $this->group = Group::with('images')->find($id);
