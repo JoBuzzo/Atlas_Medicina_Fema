@@ -1,5 +1,4 @@
 <div>
-
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
@@ -36,12 +35,6 @@
                     </div>
                     <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8">
                 @endforeach
-
-
-
-
-
-
             </div>
         </div>
     </div>
