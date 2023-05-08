@@ -2,10 +2,12 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
-                <div class="">
-                    <span class="font-medium text-blue-600 dark:text-blue-500">
-                        #categoriaVaiAqui
-                    </span>
+                <div class="mb-3">
+                    @foreach ($categories as $cat)
+                        <span class="font-medium text-blue-600 dark:text-blue-500">
+                            #{{ $cat->name }}
+                        </span>
+                    @endforeach
                 </div>
                 <div class="flex items-center justify-between w-full mb-8 lg:mb-12">
                     <h1 class="flex items-center m-0 text-5xl font-bold dark:text-white">

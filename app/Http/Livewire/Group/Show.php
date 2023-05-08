@@ -14,12 +14,14 @@ class Show extends Component
 
     public $group;
     public $images;
+    public $categories;
 
     protected $listeners = ['ImageUpdated' => 'mount'];
     
     public function mount($id)
     {
-        $this->group = Group::with('images')->find($id);
+        $this->group = Group::with('images', 'categories')->find($id);
         $this->images = $this->group->images;
+        $this->categories = $this->group->categories;
     }
 }
