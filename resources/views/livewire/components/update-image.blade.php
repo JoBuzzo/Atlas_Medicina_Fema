@@ -1,8 +1,7 @@
 <div>
-    <button wire:click='show'
-        class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        editar
-    </button>
+    <a wire:click='show' class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        Editar
+    </a>
 
     @if ($show)
         <div
