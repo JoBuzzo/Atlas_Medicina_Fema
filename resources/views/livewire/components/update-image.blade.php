@@ -1,5 +1,5 @@
 <div>
-    <a wire:click='show' class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+    <a wire:click='show' class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
         Editar
     </a>
 
@@ -29,7 +29,7 @@
                         </div>
                         <!-- Modal body -->
                         <form wire:submit.prevent="save">
-                            <div class="p-6 grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 p-6">
                                 <div>
                                     <p class="text-sm font-semibold dark:text-white">Imagem</p>
                                     <div class="relative flex items-center w-full mt-3 h-96">
