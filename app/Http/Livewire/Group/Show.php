@@ -42,7 +42,8 @@ class Show extends Component
 
         $data = [
             'group' => $this->group,
-            'images' => $this->images
+            'images' => $this->images,
+            'categories' => $this->categories
         ];
 
         $pdfContent = PDF::loadView('pdf', $data)->output();

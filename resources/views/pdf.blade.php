@@ -7,9 +7,17 @@
 </head>
 <body>
     <h1>{{ $group->title }}</h1>
-
+    @foreach ($categories as $cat)
+    <span>
+    #{{ $cat->name }}
+    </span>
+    @endforeach
 @foreach ($images as $img)
     {{ $img->title}}
+    
+    <img src="{{storage_path("app/public/images/".$img->getRawOriginal('image'))}}" alt="{{ $img->title }}">
+
+    {{ $img->description }}
 @endforeach
 </body>
 </html>
