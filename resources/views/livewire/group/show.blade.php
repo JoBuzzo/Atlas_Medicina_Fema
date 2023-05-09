@@ -14,7 +14,7 @@
                         {{ $group->title }}
                     </h1>
                     <div class="flex gap-6">
-                        <livewire:group.update :id='$group->id' />
+                        <livewire:group.update :id='$group->id' :wire:key="time().$group->id"/>
                         <button type="button"
                             class="order text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                             Baixar PDF
@@ -31,8 +31,8 @@
                         </div>
                         <div class="">
                             <div class="flex justify-end w-full gap-6 mb-3">
-                                <livewire:components.update-image :id='$image->id' />
-                                <livewire:components.delete-image :id='$image->id' />
+                                <livewire:components.update-image :id='$image->id' :wire:key="time().$image->id"/>
+                                <livewire:components.delete-image :id='$image->id' :wire:key="time().$image->id"/>
                             </div>
                             <div class="flex items-center justify-between mb-3">
                                 <h2 class="text-2xl font-medium dark:text-white">{{ $image->title }}</h2>

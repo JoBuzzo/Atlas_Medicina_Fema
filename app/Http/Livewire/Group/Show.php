@@ -16,10 +16,17 @@ class Show extends Component
     public $images;
     public $categories;
 
-    protected $listeners = ['ImageUpdated' => 'mount'];
+    protected $listeners = ['ImageUpdated' => 'refreshComponent', 'GroupUpdated' => 'refreshComponent'];
     
     public function mount($id)
     {
+        $this->group = Group::with('images', 'categories')->find($id);
+        $this->images = $this->group->images;
+        $this->categories = $this->group->categories;
+    }
+
+
+    public function refreshComponent($id){
         $this->group = Group::with('images', 'categories')->find($id);
         $this->images = $this->group->images;
         $this->categories = $this->group->categories;
