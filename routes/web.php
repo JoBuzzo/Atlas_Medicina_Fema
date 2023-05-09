@@ -3,8 +3,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Categories;
-use App\Http\Livewire\Components\UpdateImage;
 use App\Http\Livewire\Group\{
+    Index,
     Show,
     Store, 
     Update
@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
 Route::get('group-image/edit/{id}', Update::class)->name('images.update');
 Route::get('group-image/create', Store::class)->name('images.store');
 Route::get('group-image/{id}', Show::class)->name('images.show');
+Route::get('group-image', Index::class)->name('images.index');
 route::get('categories', Categories::class)->name('categories');
 
 
