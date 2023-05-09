@@ -15,10 +15,12 @@
                     </h1>
                     <div class="flex gap-6">
                         <livewire:group.update :id='$group->id' :wire:key="time().$group->id"/>
-                        <button type="button"
+                        <form wire:submit.prevent='pdf'>
+                            <button type="submit"
                             class="order text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                             Baixar PDF
                         </button>
+                        </form>
                     </div>
                 </div>
 
