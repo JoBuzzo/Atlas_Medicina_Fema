@@ -60,14 +60,14 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <input wire:model="newImage" id="image" type="file" class="hidden" />
+                                            <input wire:model="image" id="image" type="file" class="hidden" />
                                             @if ($image)
                                                 <img class="absolute object-scale-down w-full h-full brightness-50"
                                                     src="{{ $image->temporaryUrl() }}" alt="">
                                             @endif
                                         </label>
                                     </div>
-                                    @error('newImage')
+                                    @error('image')
                                         <span
                                             class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
                                     @enderror
