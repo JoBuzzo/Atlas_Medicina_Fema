@@ -22,13 +22,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Index::class)->name('images.index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,7 +34,6 @@ Route::middleware('auth')->group(function () {
 Route::get('group-image/edit/{id}', Update::class)->name('images.update');
 Route::get('group-image/create', Store::class)->name('images.store');
 Route::get('group-image/{id}', Show::class)->name('images.show');
-Route::get('group-image', Index::class)->name('images.index');
 route::get('categories', Categories::class)->name('categories');
 
 

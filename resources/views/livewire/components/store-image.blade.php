@@ -33,10 +33,10 @@
                         </div>
                         <!-- Modal body -->
                         <form wire:submit.prevent="save">
-                            <div class="grid grid-cols-2 gap-6 p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                                 <div>
                                     <p class="text-sm font-semibold dark:text-white">Imagem</p>
-                                    <div class="relative flex items-center w-full mt-3 h-96">
+                                    <div class="relative flex items-center w-full mt-3 h-64 md:h-96">
                                         <label for="image"
                                             class="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                             <div class="z-10 flex flex-col items-center justify-center pt-5 pb-6">
@@ -50,22 +50,24 @@
                                                 </svg>
                                                 <div>
                                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                                        <span class="font-semibold">Clique para fazer upload</span>
+                                                        <span class="font-semibold">Clique para fazer
+                                                            upload</span>
                                                     </p>
                                                     <p class="text-xs text-gray-500 dark:text-gray-400">
                                                         SVG, PNG,
                                                         JPG
+
                                                     </p>
                                                 </div>
                                             </div>
-                                            <input wire:model="image" id="image" type="file" class="hidden" />
+                                            <input wire:model="newImage" id="image" type="file" class="hidden" />
                                             @if ($image)
                                                 <img class="absolute object-scale-down w-full h-full brightness-50"
                                                     src="{{ $image->temporaryUrl() }}" alt="">
                                             @endif
                                         </label>
                                     </div>
-                                    @error('image')
+                                    @error('newImage')
                                         <span
                                             class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
                                     @enderror
@@ -73,7 +75,8 @@
                                 <div>
                                     <div>
                                         <label for="title" class="text-sm font-semibold dark:text-white">Titulo
-                                            imagem</label>
+                                            imagem
+                                        </label>
                                         <input type="text" wire:model="title" id="title"
                                             placeholder="Digite aqui..."
                                             class="mt-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -86,7 +89,7 @@
                                         <label for=""
                                             class="text-sm font-semibold dark:text-white">Descrição</label>
                                         <textarea wire:model="description"
-                                            class="mt-3 block p-2.5 w-full h-72 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            class="mt-3 block p-2.5 w-full h-60 md:h-[295px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             placeholder="Digite aqui..."></textarea>
                                         @error('description')
                                             <span

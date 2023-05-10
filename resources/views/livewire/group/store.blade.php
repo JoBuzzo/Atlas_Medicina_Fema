@@ -9,16 +9,13 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
-                @if (session()->has('msg'))
-                    <livewire:components.toast />
-                @endif
+
                 <div class="">
                     <div class="flex flex-col gap-10">
                         <div class="flex items-center justify-between">
                             <h2 class="text-3xl font-bold">Grupo</h2>
                             <button wire:click="resetGroup"
-                                class="flex items-center gap-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                                >
+                                class="flex items-center gap-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                 Novo grupo
                             </button>
                         </div>
@@ -245,4 +242,7 @@
             </div>
         </div>
     </div>
+    @if (session()->has('msg'))
+        <livewire:components.toast />
+    @endif
 </div>
