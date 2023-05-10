@@ -1,7 +1,11 @@
 <div>
-    <a wire:click='show' class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-        Editar
+    <a wire:click='show'
+        class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        Adicionar imagem
     </a>
+    @if (session()->has('msg'))
+        <livewire:components.toast />
+    @endif
 
     @if ($show)
         <div
@@ -14,7 +18,7 @@
                         <!-- Modal header -->
                         <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                Editar Imagem
+                                Adicionar Imagem
                             </h3>
                             <button type="button" wire:click="show"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
@@ -46,27 +50,22 @@
                                                 </svg>
                                                 <div>
                                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                                        <span class="font-semibold">Clique para fazer
-                                                            upload</span>
+                                                        <span class="font-semibold">Clique para fazer upload</span>
                                                     </p>
                                                     <p class="text-xs text-gray-500 dark:text-gray-400">
                                                         SVG, PNG,
                                                         JPG
-
                                                     </p>
                                                 </div>
                                             </div>
-                                            <input wire:model="newImage" id="image" type="file" class="hidden" />
-                                            @if (!$newImage)
+                                            <input wire:model="image" id="image" type="file" class="hidden" />
+                                            @if ($image)
                                                 <img class="absolute object-scale-down w-full h-full brightness-50"
-                                                    src="{{ $img->image }}" alt="{{ $title }}">
-                                            @else
-                                                <img class="absolute object-scale-down w-full h-full brightness-50"
-                                                    src="{{ $newImage->temporaryUrl() }}" alt="">
+                                                    src="{{ $image->temporaryUrl() }}" alt="">
                                             @endif
                                         </label>
                                     </div>
-                                    @error('newImage')
+                                    @error('image')
                                         <span
                                             class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
                                     @enderror
@@ -74,8 +73,7 @@
                                 <div>
                                     <div>
                                         <label for="title" class="text-sm font-semibold dark:text-white">Titulo
-                                            imagem
-                                        </label>
+                                            imagem</label>
                                         <input type="text" wire:model="title" id="title"
                                             placeholder="Digite aqui..."
                                             class="mt-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">

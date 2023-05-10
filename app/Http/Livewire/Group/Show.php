@@ -22,7 +22,9 @@ class Show extends Component
     
     public function mount($id)
     {
-        $this->group = Group::with('images', 'categories')->find($id);
+        if(!$this->group = Group::with('images', 'categories')->find($id)){
+            return redirect()->route('images.index');
+        }
         $this->images = $this->group->images;
         $this->categories = $this->group->categories;
     }

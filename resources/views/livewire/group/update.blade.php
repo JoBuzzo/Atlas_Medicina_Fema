@@ -1,7 +1,7 @@
 <div>
     <div>
-        <a wire:click="show" class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            Editar
+        <a wire:click="show" class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Editar Grupo
         </a>
         @if ($show)
             <div
@@ -30,7 +30,7 @@
                             <!-- Modal body -->
                             <form wire:submit.prevent='saveGroup'>
                                 <div class="p-6">
-                                    <div class="w-ful mb-6">
+                                    <div class="mb-6 w-ful">
                                         <label for="titleGroup"
                                             class="text-sm font-semibold dark:text-white">Titulo</label>
                                         <input type="text" wire:model='titleGroup' id="titleGroup"

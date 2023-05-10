@@ -21,6 +21,9 @@
                 <livewire:group.update :id="$group->id"/>
             </li>
             <li>
+                <livewire:components.store-image :id="$group->id" />
+            </li>
+            <li>
                 <a class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 wire:click='pdf'>Baixar PDF</a>
             </li>
