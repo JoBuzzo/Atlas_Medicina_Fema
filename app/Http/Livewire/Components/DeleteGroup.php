@@ -33,7 +33,9 @@ class DeleteGroup extends Component
             unlink(storage_path('app/public/images/' . $image->getRawOriginal('image')));
         }
 
-        $this->group->images->delete();
+        $this->group->images()->delete();
+
+        $this->group->categories()->detach();
 
         $this->group->delete();
 
