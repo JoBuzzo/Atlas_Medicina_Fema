@@ -1,7 +1,7 @@
 <div>
     <a wire:click='show'
         class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-        Adicionar imagem
+        Adicionar Imagem
     </a>
     @if (session()->has('msg'))
         <livewire:components.toast />
