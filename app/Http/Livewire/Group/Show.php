@@ -38,7 +38,6 @@ class Show extends Component
 
     public function pdf()
     {
-        
         $fileName = Str::slug($this->group->title);
 
 

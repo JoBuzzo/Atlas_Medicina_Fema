@@ -17,19 +17,23 @@
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         class="absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow top-12 w-44 dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-            <li>
-                <livewire:group.update :id="$group->id"/>
-            </li>
-            <li>
-                <livewire:components.store-image :id="$group->id" />
-            </li>
+            @auth
+                <li>
+                    <livewire:group.update :id="$group->id" />
+                </li>
+                <li>
+                    <livewire:components.store-image :id="$group->id" />
+                </li>
+            @endauth
             <li>
                 <a class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                wire:click='pdf'>Baixar PDF</a>
+                    wire:click='pdf'>Baixar PDF</a>
             </li>
         </ul>
-        <div class="py-2">
-            <livewire:components.delete-group :id="$group->id" />
-        </div>
+        @auth
+            <div class="py-2">
+                <livewire:components.delete-group :id="$group->id" />
+            </div>
+        @endauth
     </div>
 </div>

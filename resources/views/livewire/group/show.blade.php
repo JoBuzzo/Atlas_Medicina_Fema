@@ -46,7 +46,9 @@
                             </a>
                         </div>
                         <div class="">
-                            <x-actions-image-dropdown :imageId="$image->id" />
+                            @auth
+                                <x-actions-image-dropdown :imageId="$image->id" />
+                            @endauth
                             <div class="flex items-center justify-between mb-3">
                                 <h2 class="text-lg md:text-2xl font-bold dark:text-white">{{ $image->title }}</h2>
                             </div>
