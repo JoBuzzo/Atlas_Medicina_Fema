@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" class="relative">
+<div x-data="{ open: false }" class="relative flex justify-end items-end">
     <button x-on:click="open = !open" data-dropdown-trigger="hover"
         class="flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         type="button">Ações <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
