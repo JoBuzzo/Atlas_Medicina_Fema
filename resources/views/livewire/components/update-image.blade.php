@@ -7,7 +7,7 @@
         <div
             class=" bg-[#000000bd] overflow-y-auto block fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-modal h-full">
             <div
-                class="absolute w-full h-full max-w-6xl p-4 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                class="absolute w-full h-full max-w-lg md:max-w-6xl p-4 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                 <div class="relative w-full max-h-full">
                     <!-- Modal content -->
                     <div class="relative w-full bg-white rounded-lg shadow dark:bg-gray-700">
@@ -29,10 +29,10 @@
                         </div>
                         <!-- Modal body -->
                         <form wire:submit.prevent="save">
-                            <div class="grid grid-cols-2 gap-6 p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                                 <div>
                                     <p class="text-sm font-semibold dark:text-white">Imagem</p>
-                                    <div class="relative flex items-center w-full mt-3 h-96">
+                                    <div class="relative flex items-center w-full mt-3 h-64 md:h-96">
                                         <label for="image"
                                             class="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                             <div class="z-10 flex flex-col items-center justify-center pt-5 pb-6">
@@ -87,7 +87,7 @@
                                         <label for=""
                                             class="text-sm font-semibold dark:text-white">Descrição</label>
                                         <textarea wire:model="description"
-                                            class="mt-3 block p-2.5 w-full h-72 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            class="mt-3 block p-2.5 w-full h-60 md:h-[295px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             placeholder="Digite aqui..."></textarea>
                                         @error('description')
                                             <span

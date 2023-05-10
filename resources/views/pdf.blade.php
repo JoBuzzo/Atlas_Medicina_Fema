@@ -44,6 +44,7 @@
             display: block;
             margin-bottom: 10px;
             max-width: 100%;
+            max-height: 50%;
         }
 
         p {
