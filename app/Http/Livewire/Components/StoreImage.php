@@ -52,6 +52,5 @@ class StoreImage extends Component
         session()->flash('msg', 'Imagem adicionada com sucesso.');
         $this->reset('show');
         $this->emit('ImageUpdated', $this->group->id);
-
     }
 }
