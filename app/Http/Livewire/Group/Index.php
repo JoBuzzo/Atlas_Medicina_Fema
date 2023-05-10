@@ -37,10 +37,10 @@ class Index extends Component
             })
             ->leftJoin('images', function ($join) {
                 $join->on('groups.id', '=', 'images.group_id')
-                    ->whereRaw('images.id = (select min(id) from images where images.group_id = groups.id)');
+                    ->whereRaw('images.id = (select min(id) from `images` where `images`.`group_id` = `groups`.`id`)');
             })
             ->with('categories')
-            ->selectRaw('groups.*, images.image as image_path')
+            ->selectRaw('`groups`.*, `images`.`image` as `image_path`')
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
