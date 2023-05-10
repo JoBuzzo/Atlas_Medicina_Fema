@@ -82,7 +82,7 @@
                         class="flex flex-col items-center w-4/5 p-12 bg-white rounded shadow-lg sm:w-full dark:bg-gray-800 sm:flex-row sm:justify-center">
                         <img class="w-20 h-20 mb-5 sm:mb-0" src="{{ asset('img/nothing-found.png') }}" alt="">
                         <div class="sm:ml-24">
-                            <h1 class="m-0 text-2xl sm:text-3xl">Não há imagens que correspondam à sua busca</h1>
+                            <h1 class="m-0 text-2xl sm:text-3xl">Não há imagens que correspondem à sua busca</h1>
                             <div class="sm:ml-6">
                                 <ul class="mt-3 list-disc">
                                     <li>

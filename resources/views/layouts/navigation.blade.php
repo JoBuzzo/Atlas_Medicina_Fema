@@ -65,14 +65,11 @@
                             </x-slot>
                         </x-dropdown>
                     @endauth
-                    {{-- @guest
-                        <a href="{{ route('login') }}"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</a>
-                    @endguest --}}
+
                 </div>
 
                 <!-- Hamburger -->
-                <button id="theme-toggle" type="button" class="dark-mode">
+                <button id="theme-toggle" type="button" class="p-2 transition duration-150 ease-in-out rounded-md dark-mode hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 fill-slate-400" fill="currentColor"
                         viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -84,7 +81,7 @@
                             fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <div class="flex items-center -mr-2 sm:hidden">
+                <div class="flex items-center ml-2 sm:hidden">
 
                     <button @click="open = ! open"
                         class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400">
@@ -116,12 +113,7 @@
                     Categorias
                 </x-responsive-nav-link>
             @endauth
-            {{-- @guest
-                <div class="px-3" style="margin-top: 12px; margin-bottom:12px;">
-                    <a href="{{ route('login') }}"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</a>
-                </div>
-            @endguest --}}
+
         </div>
 
         <!-- Responsive Settings Options -->
