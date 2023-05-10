@@ -9,10 +9,20 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
+                @if (session()->has('msg'))
+                    <livewire:components.toast />
+                @endif
                 <div class="">
                     <div class="flex flex-col gap-10">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-3xl font-bold">Grupo</h2>
+                            <button wire:click="resetGroup"
+                                class="flex items-center gap-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                >
+                                Novo grupo
+                            </button>
+                        </div>
                         <form wire:submit.prevent="saveGroup">
-                            <h2 class="mb-4 text-3xl font-bold">Grupo</h2>
                             <div class="flex flex-col justify-between w-full gap-6 md:flex-row md:items-end">
                                 <div class="w-full md:w-1/2">
                                     <label for="titleGroup" class="text-sm font-semibold dark:text-white">Titulo</label>
@@ -101,13 +111,13 @@
                                         @enderror
                                     </div>
                                     @if (!$group)
-                                    <div class="text-center">
-                                        <button
-                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                                            type="submit">
-                                            Confirmar
-                                        </button>
-                                    </div>
+                                        <div class="text-center">
+                                            <button
+                                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                                type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
                                     @endif
                                 </div>
 
@@ -119,11 +129,6 @@
                         <form wire:submit.prevent='saveImage'>
                             <div class="flex items-center justify-between">
                                 <h2 class="mb-4 text-3xl font-bold">Imagens</h2>
-                                <button wire:click="resetImages"
-                                    class="flex items-center gap-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                                    type="submit">
-                                    Nova imagem
-                                </button>
                             </div>
                             <div class="flex flex-col items-end w-ful">
 

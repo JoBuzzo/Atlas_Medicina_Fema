@@ -3,7 +3,8 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
                 <div wire:loading wire:target="pdf">
-                    <div class="bg-[#000000bd] overflow-y-auto block fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-modal h-full">
+                    <div
+                        class="bg-[#000000bd] overflow-y-auto block fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-modal h-full">
                         <div class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                             <div class="flex flex-col items-center justify-center gap-5">
                                 <svg aria-hidden="true"
@@ -19,7 +20,7 @@
                                 <span class="text-white">Baixando PDF...</span>
                             </div>
                         </div>
-    
+
                     </div>
                 </div>
                 <div class="mb-3">
@@ -30,8 +31,8 @@
                     @endforeach
 
                 </div>
-                <div class="flex items-center justify-between w-full mb-8 lg:mb-12">
-                    <h1 class="flex items-center m-0 text-5xl font-bold dark:text-white">
+                <div class="flex flex-col gap-3 w-full mb-8 lg:mb-12">
+                    <h1 class="flex items-center m-0 text-3xl sm:text-4xl md:text-5xl order-1 font-bold dark:text-white">
                         {{ $group->title }}
                     </h1>
                     <x-actions-dropdown :group="$group" />
@@ -47,7 +48,7 @@
                         <div class="">
                             <x-actions-image-dropdown :imageId="$image->id" />
                             <div class="flex items-center justify-between mb-3">
-                                <h2 class="text-2xl font-medium dark:text-white">{{ $image->title }}</h2>
+                                <h2 class="text-lg md:text-2xl font-bold dark:text-white">{{ $image->title }}</h2>
                             </div>
                             <p class="">{{ $image->description }}</p>
 

@@ -46,6 +46,8 @@ class Store extends Component
         foreach ($this->selected_categories as $id) {
             $this->group->categories()->attach($id);
         }
+
+        session()->flash('msg', 'Grupo adicionado com sucesso.');
     }
 
 
@@ -58,6 +60,8 @@ class Store extends Component
         $this->validate([
             'titleImage' => 'required|string|max:60',
             'image' => 'image',
+            'titleGroup' => 'required|string|max:60',
+            'selected_categories' => 'required',
             'description' => 'required|string',
         ]);
 
@@ -68,7 +72,14 @@ class Store extends Component
             'image' => $nameFile,
             'title' => $this->titleImage,
             'description' => $this->description
-        ]);   
+        ]);
+
+        session()->flash('msg', 'Imagem adicionada com sucesso.');
+        $this->resetImages();
+    }
+
+    public function resetGroup(){
+        $this->reset();
     }
 
 
