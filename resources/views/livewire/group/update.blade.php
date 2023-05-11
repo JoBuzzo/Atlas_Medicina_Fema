@@ -86,7 +86,7 @@
                                                     </div>
                                                 </div>
                                                 <ul
-                                                    class="px-3 pb-3 overflow-y-auto text-sm text-gray-700 max-h-48 dark:text-gray-200">
+                                                    class="px-3 py-3 overflow-y-auto text-sm text-gray-700 max-h-48 dark:text-gray-200">
                                                     @forelse ($categories as $category)
                                                         <li
                                                             class="flex items-center p-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600">

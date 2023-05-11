@@ -1,5 +1,6 @@
 <div>
-    <a wire:click='show' class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+    <a wire:click='show'
+        class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
         Editar
     </a>
 

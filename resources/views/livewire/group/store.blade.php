@@ -1,11 +1,7 @@
 <div>
-    <div class="bg-white shadow dark:bg-gray-800">
-        <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="sm:flex sm:flex-row sm:items-center sm:gap-6">
-                <livewire:components.create-category />
-            </div>
-        </div>
-    </div>
+    @if (session()->has('msg'))
+        <livewire:components.toast />
+    @endif
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 mx-auto sm:px-6 lg:px-8">
@@ -76,7 +72,7 @@
                                                 </div>
                                             </div>
                                             <ul
-                                                class="px-3 pb-3 overflow-y-auto text-sm text-gray-700 max-h-48 dark:text-gray-200">
+                                                class="px-3 py-3 overflow-y-auto text-sm text-gray-700 max-h-48 dark:text-gray-200">
                                                 @forelse ($categories as $category)
                                                     <li
                                                         class="flex items-center p-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -98,9 +94,7 @@
                                                     </li>
                                                 @endforelse
                                             </ul>
-                                            <div
-                                                class="flex items-center p-3 text-sm font-medium text-red-600 border-t border-gray-200 rounded-b-lg dark:border-gray-600 dark:bg-gray-700 ">
-                                            </div>
+                                            <livewire:components.create-category />
                                         </div>
                                         @error('selected_categories')
                                             <p class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
@@ -242,7 +236,4 @@
             </div>
         </div>
     </div>
-    @if (session()->has('msg'))
-        <livewire:components.toast />
-    @endif
 </div>

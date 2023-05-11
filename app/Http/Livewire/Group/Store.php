@@ -35,7 +35,7 @@ class Store extends Component
     public function saveGroup()
     {
         $this->validate([
-            'titleGroup' => 'required|string|max:60',
+            'titleGroup' => 'required|string',
             'selected_categories' => 'required',
         ]);
 
@@ -58,9 +58,9 @@ class Store extends Component
     public function saveImage()
     {
         $this->validate([
-            'titleImage' => 'required|string|max:60',
+            'titleImage' => 'required|string',
             'image' => 'image',
-            'titleGroup' => 'required|string|max:60',
+            'titleGroup' => 'required|string',
             'selected_categories' => 'required',
             'description' => 'required|string',
         ]);
@@ -94,8 +94,8 @@ class Store extends Component
     public function updated($propertyName)
     {   
         $this->validateOnly($propertyName, [
-            'titleGroup' => 'required|string|max:60',
-            'titleImage' => 'required|string|max:60',
+            'titleGroup' => 'required|string',
+            'titleImage' => 'required|string',
             'image' => 'image',
             'description' => 'required|string',
         ]);

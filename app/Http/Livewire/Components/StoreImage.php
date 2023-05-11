@@ -35,7 +35,7 @@ class StoreImage extends Component
     {
 
         $this->validate([
-            'title' => 'required|string|max:60',
+            'title' => 'required|string',
             'image' => 'required|image',
             'description' => 'required|string',
         ]);
@@ -50,7 +50,8 @@ class StoreImage extends Component
         ]);
 
         session()->flash('msg', 'Imagem adicionada com sucesso.');
-        $this->reset('show');
         $this->emit('ImageUpdated', $this->group->id);
+        $this->reset(['title', 'image', 'description', 'show']);
+
     }
 }

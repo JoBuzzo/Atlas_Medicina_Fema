@@ -36,9 +36,8 @@ class UpdateImage extends Component
 
     public function save()
     {
-
         $this->validate([
-            'title' => 'required|string|max:60',
+            'title' => 'required|string',
             'newImage' => 'nullable|image',
             'description' => 'required|string',
         ]);
@@ -65,6 +64,5 @@ class UpdateImage extends Component
         session()->flash('msg', 'Imagem editada com sucesso.');
         $this->reset('show');
         $this->emit('ImageUpdated', $this->img->group_id);
-
     }
 }

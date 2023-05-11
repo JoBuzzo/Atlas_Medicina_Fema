@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use App\Models\Group;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Validation\Rule;
@@ -24,7 +26,9 @@ class Categories extends Component
     public function delete($id)
     {
         $category = Category::find($id);
-        
+
+        DB::table('category_group')->where('category_id', $category->id)->delete();
+
         $category->delete();
 
         $this->modalDelete = false;

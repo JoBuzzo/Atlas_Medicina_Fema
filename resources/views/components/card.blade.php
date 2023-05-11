@@ -6,9 +6,6 @@
             <div class="mb-2 text-xl font-bold truncate  dark:text-white">
                 {{ $title }}
             </div>
-            <p class="text-base text-gray-700 truncate max-h-24 dark:text-slate-300">
-                {{ $description }}
-            </p>
         </div>
         <div class="w-full flex justify-center">
             <div class="w-11/12 flex px-4 py-2 overflow-hidden">

@@ -1,8 +1,12 @@
 <div>
-    <button wire:click="show"
-        class="flex items-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-        Adicionar categoria
-    </button>
+    <a wire:click="show"
+        class="cursor-pointer flex items-center justify-center p-3 gap-1 text-sm font-medium text-blue-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        Adicionar nova categoria
+    </a>
     @if ($show)
         <div
             class=" bg-[#000000bd] overflow-y-auto block fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-modal h-full">

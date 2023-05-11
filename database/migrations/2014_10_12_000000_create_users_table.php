@@ -24,7 +24,7 @@ return new class extends Migration
         
         User::create([
             'name' => 'Administrador',
-            'email' => 'admin@fema.edu.com',
+            'email' => 'admin@fema.edu.br',
             'password' => bcrypt('12345678'),
             'email_verified_at' => now(),
         ]);

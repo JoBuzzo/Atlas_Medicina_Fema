@@ -41,7 +41,7 @@ class Update extends Component
     {
 
         $this->validate([
-            'titleGroup' => 'required|string|max:60',
+            'titleGroup' => 'required|string',
             'selected_categories' => 'required',
         ]);
 
@@ -63,7 +63,7 @@ class Update extends Component
     public function updated($propertyName)
     {   
         $this->validateOnly($propertyName, [
-            'titleGroup' => 'required|string|max:60',
+            'titleGroup' => 'required|string',
         ]);
     }
 
