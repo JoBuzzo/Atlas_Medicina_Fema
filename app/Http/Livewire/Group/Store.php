@@ -15,6 +15,13 @@ class Store extends Component
     public $categories, $search_category, $selected_categories = [];
 
     protected $listeners = ['AddedCategory' => '$refresh'];
+
+    public $validationAttributes = [
+        'titleGroup' => 'titulo grupo',
+        'selected_categories' => 'categorias',
+        'image' => 'imagem',
+        'titleImage' => 'titulo imagem',
+    ];
     
     public function mount()
     {
