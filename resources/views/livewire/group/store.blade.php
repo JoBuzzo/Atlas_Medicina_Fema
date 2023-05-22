@@ -148,10 +148,9 @@
                                                                     <span class="font-semibold">Clique para fazer
                                                                         upload</span>
                                                                 </p>
-                                                                <p class="text-xs text-gray-400">
-                                                                    SVG, PNG,
-                                                                    JPG
-                                                                    (MAX. 800x400px)</p>
+                                                                <p class="text-xs text-center text-gray-400">
+                                                                    SVG, PNG, JPG
+                                                                </p>
                                                             </div>
                                                         @else
                                                             <svg aria-hidden="true"
@@ -169,10 +168,10 @@
                                                                     <span class="font-semibold">Clique para fazer
                                                                         upload</span>
                                                                 </p>
-                                                                <p class="text-xs text-gray-500 dark:text-gray-400">
+                                                                <p class="text-xs text-center text-gray-500 dark:text-gray-400">
                                                                     SVG, PNG,
                                                                     JPG
-                                                                    (MAX. 800x400px)</p>
+                                                                </p>
                                                             </div>
                                                         @endif
                                                     </div>
@@ -190,6 +189,9 @@
                                             @enderror
                                         </div>
 
+                                    </div>
+
+                                    <div class="w-full md:w-1/2">
                                         <div>
                                             <label for="titleImage"
                                                 class="text-sm font-semibold dark:text-white">Titulo
@@ -202,18 +204,18 @@
                                                     class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                    </div>
 
-                                    <div class="w-full md:w-1/2">
-                                        <label for=""
-                                            class="text-sm font-semibold dark:text-white">Descrição</label>
-                                        <textarea wire:model="description"
-                                            class="mt-3 block p-2.5 w-full h-80 md:h-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="Digite aqui..."></textarea>
-                                        @error('description')
-                                            <span
-                                                class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
-                                        @enderror
+                                        <div class="mt-6">
+                                            <label for=""
+                                                class="text-sm font-semibold dark:text-white">Descrição</label>
+                                            <textarea wire:model="description"
+                                                class="mt-3 block p-2.5 w-full h-[275px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Digite aqui..."></textarea>
+                                            @error('description')
+                                                <span
+                                                    class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">{{ $message }}</span>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                             </div>
