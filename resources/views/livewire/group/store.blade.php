@@ -219,17 +219,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full text-center">
+                            @if ($group)
+                                <div class="w-full text-center">
                                 <button type="reset"
                                     class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
                                     Cancelar
                                 </button>
                                 <button
-                                    class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    class="disable mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                                     type="submit">
                                     Confirmar
                                 </button>
                             </div>
+                            @else
+                                <div class="mt-6">
+                                    <p class="text-center dark:text-gray-200">É necessário criar um grupo antes para enviar as imagens</p>
+                                </div>
+                            @endif
                         </form>
                     </div>
 

@@ -35,9 +35,9 @@ class StoreImage extends Component
     {
 
         $this->validate([
-            'title' => 'required|string',
+            'title' => 'nullable|string',
             'image' => 'required|image',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
         ]);
 
         $nameFile = Str::slug($this->title) . date("Ymdhis") . "." . $this->image->getClientOriginalExtension();

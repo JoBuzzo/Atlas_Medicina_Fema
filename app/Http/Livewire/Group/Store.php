@@ -65,11 +65,11 @@ class Store extends Component
     public function saveImage()
     {
         $this->validate([
-            'titleImage' => 'required|string',
+            'titleImage' => 'string|nullable',
             'image' => 'image',
             'titleGroup' => 'required|string',
             'selected_categories' => 'required',
-            'description' => 'required|string',
+            'description' => 'string|nullable',
         ]);
 
         $nameFile = Str::slug($this->titleImage) . date("Ymdhis") . "." . $this->image->getClientOriginalExtension();
@@ -102,9 +102,9 @@ class Store extends Component
     {   
         $this->validateOnly($propertyName, [
             'titleGroup' => 'required|string',
-            'titleImage' => 'required|string',
+            'titleImage' => 'string|nullable',
             'image' => 'image',
-            'description' => 'required|string',
+            'description' => 'string|nullable',
         ]);
     }
 

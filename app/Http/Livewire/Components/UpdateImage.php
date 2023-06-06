@@ -37,9 +37,9 @@ class UpdateImage extends Component
     public function save()
     {
         $this->validate([
-            'title' => 'required|string',
+            'title' => 'nullable|string',
             'newImage' => 'nullable|image',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
         ]);
 
         if($this->newImage){
