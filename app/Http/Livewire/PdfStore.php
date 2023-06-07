@@ -16,20 +16,8 @@ class PdfStore extends Component
 
     public function teste($id)
     {
-        $group = Group::find($id);
-        $fileName = Str::slug($group->title);
+        $group = Group::with('images')->find($id);
 
-
-        $data = [
-            'group' => $group,
-            'images' => $group->images,
-        ];
-
-        return PDF::loadView('pdf', $data)->stream();
-
-        // return response()->streamDownload(
-        //     fn () => print($pdfContent),
-        //     "$fileName.pdf"
-        // );
+        return PDF::loadView('pdf', compact('group'))->stream();
     }
 }
