@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\GeneratePDFJob;
 use App\Models\Group;
 use Livewire\Component;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Support\Str;
+
 
 class PdfStore extends Component
 {
@@ -18,6 +19,16 @@ class PdfStore extends Component
     {
         $group = Group::with('images')->find($id);
 
+        dd(GeneratePDFJob::dispatch($group)->delay(now()->addSeconds(15)));
+
         return PDF::loadView('pdf', compact('group'))->stream();
-    }
+    }   
+
+    
+    // public function teste1($id)
+    // {
+    //     $group = Group::with('images')->find($id);
+
+    //     return PDF::loadView('pdf', compact('group'))->stream();
+    // }
 }
