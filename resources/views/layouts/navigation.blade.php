@@ -28,7 +28,7 @@
 
             <!-- Settings Dropdown -->
             <div class="flex items-center">
-                <div class="order-1 hidden sm:flex sm:items-center sm:ml-6">
+                <div class="order-1 hidden sm:flex sm:items-center md:ml-1">
                     @auth
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
@@ -69,7 +69,8 @@
                 </div>
 
                 <!-- Hamburger -->
-                <button id="theme-toggle" type="button" class="p-2 transition duration-150 ease-in-out rounded-md dark-mode hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400">
+                <button id="theme-toggle" type="button"
+                    class="p-2 transition duration-150 ease-in-out rounded-md dark-mode hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 fill-slate-400" fill="currentColor"
                         viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>

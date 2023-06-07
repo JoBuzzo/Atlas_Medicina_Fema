@@ -26,8 +26,9 @@
                 </li>
             @endauth
             <li>
-                <a class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    wire:click='pdf'>Baixar PDF</a>
+                <a href="{{route('pdf.store', ['id' => $group->id])}}" target="_blank" class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Baixar PDF
+                </a>
             </li>
         </ul>
         @auth

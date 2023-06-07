@@ -42,6 +42,7 @@
 
         img {
             display: block;
+            width: 75%;
             margin-bottom: 10px;
             max-width: 100%;
             max-height: 50%;
@@ -65,21 +66,19 @@
 
 <body>
     <h1 style="text-align: center">{{ $group->title }}</h1>
-    
+{{--     
     @foreach ($images as $img)
         <table border="0">
             <tr>
-                <td>
+                <td style="width: 100%">
                     <h2>{{ $img->title }}</h2>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center">
+                <td>
                     <img src="{{ storage_path('app/public/images/' . $img->getRawOriginal('image')) }}" alt="{{ $img->title }}">
                 </td>
-            </tr>
-            <tr>
-                <td style="padding-top:24px ">
+                <td style="width: 50%;">
                     <p>{{ $img->description }}</p>
                 </td>
             </tr>
@@ -88,6 +87,11 @@
             <div class="page-break"></div>
         @endif
 
+    @endforeach --}}
+    @foreach ($images as $img)
+        <h2>{{$img->title}}</h2>
+        <img style="text-align:center" src="{{ storage_path('app/public/images/' . $img->getRawOriginal('image')) }}" alt="{{ $img->title }}">
+        <p>{{ $img->description }}</p>
     @endforeach
 </body>
 

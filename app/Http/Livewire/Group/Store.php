@@ -66,7 +66,7 @@ class Store extends Component
     {
         $this->validate([
             'titleImage' => 'string|nullable',
-            'image' => 'image',
+            'image' => 'image|max:4500',
             'titleGroup' => 'required|string',
             'selected_categories' => 'required',
             'description' => 'string|nullable',

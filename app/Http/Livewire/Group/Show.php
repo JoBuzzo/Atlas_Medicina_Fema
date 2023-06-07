@@ -35,24 +35,4 @@ class Show extends Component
         $this->images = $this->group->images;
         $this->categories = $this->group->categories;
     }
-
-    public function pdf()
-    {
-        $fileName = Str::slug($this->group->title);
-
-
-        $data = [
-            'group' => $this->group,
-            'images' => $this->images,
-        ];
-
-        $pdfContent = PDF::loadView('pdf', $data)->output();
-
-        return response()->streamDownload(
-             fn () => print($pdfContent),
-             "$fileName.pdf"
-        );
-
-    }
-    
 }
