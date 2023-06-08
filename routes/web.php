@@ -9,7 +9,6 @@ use App\Http\Livewire\Group\{
     Store, 
     Update
 };
-use App\Http\Livewire\PdfStore;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,8 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('group-image/create', Store::class)->name('images.store');
     route::get('categories', Categories::class)->name('categories');
 });
-
-Route::get('/pdf/{id}', [PdfStore::class, 'teste'])->name('pdf.store');
 
 Route::get('group-image/{id}', Show::class)->name('images.show');
 

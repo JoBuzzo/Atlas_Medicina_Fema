@@ -9,7 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\Storage;
 
 class GeneratePDFJob implements ShouldQueue
 {
@@ -28,6 +28,14 @@ class GeneratePDFJob implements ShouldQueue
     {
         $group = $this->group;
 
-        return PDF::loadView('pdf', compact('group'))->stream();
+        // Lógica para gerar o PDF com as imagens do grupo
+        $pdf = PDF::loadView('pdf', compact('group'));
+
+        // Gerar um nome de arquivo único para o PDF
+        $pdfFileName = '/public/pdfs/' . $group->id . '.pdf';
+
+        ini_set('memory_limit', '256M');
+        // Salvar o PDF no disco temporário
+        Storage::disk('local')->put($pdfFileName, $pdf->output());
     }
 }

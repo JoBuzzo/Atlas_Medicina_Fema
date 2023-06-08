@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Components;
 
+use App\Jobs\GeneratePDFJob;
 use App\Models\Group;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -51,6 +52,7 @@ class StoreImage extends Component
 
         session()->flash('msg', 'Imagem adicionada com sucesso.');
         $this->emit('ImageUpdated', $this->group->id);
+        GeneratePDFJob::dispatch($this->group);
         $this->reset(['title', 'image', 'description', 'show']);
 
     }
