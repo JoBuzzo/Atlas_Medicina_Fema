@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Group;
 
+use App\Jobs\GeneratePDFJob;
 use App\Models\Category;
 use App\Models\Group;
 use Livewire\Component;
@@ -53,6 +54,8 @@ class Update extends Component
         foreach ($this->selected_categories as $id) {
             $this->group->categories()->attach($id);
         }
+
+        GeneratePDFJob::dispatch($this->group);
 
         $this->reset('show');
         $this->emit('GroupUpdated', $this->group->id);
