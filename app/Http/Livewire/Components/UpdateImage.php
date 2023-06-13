@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Components;
 
+use App\Jobs\GeneratePDFJob;
 use App\Models\Image;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -60,7 +61,7 @@ class UpdateImage extends Component
                 'description' => $this->description,
             ]);
         }
-        
+        GeneratePDFJob::dispatch($this->img->group);
         session()->flash('msg', 'Imagem editada com sucesso.');
         $this->reset('show');
         $this->emit('ImageUpdated', $this->img->group_id);

@@ -7,7 +7,7 @@
 
     <div wire:poll.500ms>
         @if ($groupId && Storage::disk('public')->exists('pdfs/' . $groupId . '.pdf'))
-            <a href="{{ asset('storage/pdfs/' . $groupId . '.pdf') }}" target="_blank" class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <a href="{{ asset('storage/app/public/pdfs/' . $groupId . '.pdf') }}" target="_blank" class="block px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                 Baixar PDF
             </a>
         @elseif ($pdfGenerationInProgress)

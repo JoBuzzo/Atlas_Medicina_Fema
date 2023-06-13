@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Components;
 
 use App\Models\Group;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class DeleteGroup extends Component
@@ -28,7 +29,11 @@ class DeleteGroup extends Component
     public function delete()
     {
         $images = $this->group->images;
-
+        
+        if(Storage::disk('public')->exists('pdfs/' . $this->group->id . '.pdf')){
+            unlink(storage_path('app/public/pdfs/' . $this->group->id  . '.pdf'));
+        }
+        
         foreach ($images as $image){
             unlink(storage_path('app/public/images/' . $image->getRawOriginal('image')));
         }

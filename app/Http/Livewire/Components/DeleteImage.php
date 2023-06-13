@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Components;
 
+use App\Jobs\GeneratePDFJob;
 use App\Models\Image;
 use Livewire\Component;
 
@@ -24,7 +25,7 @@ class DeleteImage extends Component
 
         $this->emit('ImageUpdated', $this->image->group_id);
         $this->image->delete();
-        
+        GeneratePDFJob::dispatch($this->image->group);
 
         session()->flash('msg', 'Imagem deletada com sucesso.');
         $this->reset('show');

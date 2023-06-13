@@ -34,7 +34,6 @@ class GeneratePDFJob implements ShouldQueue
         // Gerar um nome de arquivo único para o PDF
         $pdfFileName = '/public/pdfs/' . $group->id . '.pdf';
 
-        ini_set('memory_limit', '256M');
         // Salvar o PDF no disco temporário
         Storage::disk('local')->put($pdfFileName, $pdf->output());
     }
