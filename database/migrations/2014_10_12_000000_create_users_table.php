@@ -21,13 +21,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        
-        User::create([
-            'name' => 'Administrador',
-            'email' => 'admin@fema.edu.br',
-            'password' => bcrypt('12345678'),
-            'email_verified_at' => now(),
-        ]);
+
+        User::create(['name' => 'Administrador', 'email' => 'admin@fema.edu.br', 'password' => bcrypt('12345678'), 'email_verified_at' => now(),]);
 
     }
 
